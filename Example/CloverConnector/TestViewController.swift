@@ -178,7 +178,7 @@ public class TestViewController: UIViewController, UITableViewDelegate, UITableV
         var loadData:Data?
         cases.removeAllObjects()
         testResultsTable.reloadData()
-        if testLoadURL.text?.characters.count == 0 {
+        if testLoadURL.text?.count == 0 {
             if let path = Bundle.main.path( forResource: "test1", ofType: "json") {
                 if let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
                     let datastring = String(data: data, encoding: String.Encoding.utf8) {
@@ -239,7 +239,7 @@ public class TestViewController: UIViewController, UITableViewDelegate, UITableV
                     }
                 }
             }catch{
-                
+                print("incorrect data")
             }
         }
         
@@ -559,7 +559,7 @@ class TestResponseCloverConnector : ResponseCloverConnector {
                 self.testCase.response = jsonString
                 self.testCase.done( match)
             }catch{
-                
+                print("invalid data")
             }
         } else {
             self.testCase.done((false,"Couldn't compare"))
