@@ -187,7 +187,7 @@ extension PrintTestViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension PrintTestViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
             self.spinner.startAnimating()
             UIApplication.shared.isIdleTimerDisabled = true
