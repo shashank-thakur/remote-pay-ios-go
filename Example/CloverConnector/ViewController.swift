@@ -210,7 +210,7 @@ extension ViewController: AVCaptureMetadataOutputObjectsDelegate {
                     cleanedString = components?.url?.absoluteString
                 }
                 
-                if components?.url?.absoluteString.characters.last == "?" {
+                if components?.url?.absoluteString.last == "?" {
                     if var string = components?.url?.absoluteString {
                         string.removeLast()
                         cleanedString = string
