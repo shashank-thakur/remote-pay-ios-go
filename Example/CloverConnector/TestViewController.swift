@@ -593,7 +593,7 @@ class Case {
                 return Mapper<CLVModels.Payments.VaultedCard>().map(JSONString: vcStr)
             }
         } else if var vcVarMarker = payload[JSON_KEYS.VAULTED_CARD].string,
-            vcVarMarker.characters.removeFirst() == "$" {
+            vcVarMarker.removeFirst() == "$" {
             return self.caseRunner?.storedValues[vcVarMarker] as? CLVModels.Payments.VaultedCard
         }
         return nil
